@@ -21,6 +21,10 @@
 .log_form{
     margin: 0 auto;
     width: 30%;
-    
-    
+}
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
 }

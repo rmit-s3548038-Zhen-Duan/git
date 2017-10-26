@@ -12,6 +12,7 @@ var methodOverride = require("method-override");
 var connectFlash = require("connect-flash");
 
 
+
 var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
 //mongoose.connect("mongodb://localhost/yelp_camp");
 mongoose.connect(url);

@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 
+
 //setup schema
 var campgroundSchema = new mongoose.Schema({
     
@@ -8,6 +9,9 @@ var campgroundSchema = new mongoose.Schema({
     description: String,
     cost: String,
     createdAt: { type: Date, default: Date.now },
+    location: String,
+    lat: Number,
+    lng: Number,
     comments: [
             {
                 type: mongoose.Schema.Types.ObjectId,
