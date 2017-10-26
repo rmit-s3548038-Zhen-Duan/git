@@ -16,22 +16,16 @@ var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
 //mongoose.connect("mongodb://localhost/yelp_camp");
 mongoose.connect(url);
 
-
-
-
 app.set("view engine", "ejs");
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 
-
-
 //这行的作用是 tell express to search public
 app.use(express.static(__dirname + "/public"));
 
 app.use(connectFlash());
-
 
 //seedDB();
 
@@ -40,14 +34,15 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index")
 
-
-
 //use express-session
 app.use(require("express-session")({
     secret: "Please include the following file with any support request",
     resave: false,
     saveUninitialized: false
 }));
+
+//set up moment function
+app.locals.moment = require('moment');
 
 //set up passport
 app.use(passport.initialize());
