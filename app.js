@@ -10,7 +10,10 @@ var LocalStrategy = require("passport-local");
 var passportLocalMongoose = require("passport-local-mongoose");
 var methodOverride = require("method-override");
 var connectFlash = require("connect-flash");
-mongoose.connect("mongodb://localhost/yelp_camp");
+
+//mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://root:root>@ds231715.mlab.com:31715/yelp_camp");
+
 
 
 app.set("view engine", "ejs");
