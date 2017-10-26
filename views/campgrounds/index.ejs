@@ -1,5 +1,9 @@
 <% include ../partials/header %>
 
+<%if(currentUser && currentUser.isAdmin){%>
+    <h3>you are admin</h3>
+<% } %>
+
 <div class="container">
 
 <header class="jumbotron">

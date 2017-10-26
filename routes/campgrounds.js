@@ -21,37 +21,7 @@ router.get("/", function(req, res){
     
 });
 
-//Create Post
-//post的route可以任意取，但是惯例是增加的是什么就用什么与get的route一样，但是性质完全不一样
-// router.post("/", middleware.isLoggedIn, function(req, res){
-    
-//     //注意body的用法，得到data from post
-//     var name =  req.body.name;
-//     var image = req.body.image;
-//     var cost = req.body.cost;
-//     var description = req.body.description;
-//     var author = {
-//         id: req.user._id,
-//         username: req.user.username
-//     }
-    
-//     var newCampground = {name: name, image: image, cost: cost, description: description, author: author};
-//     //campgrounds.push(campground);
-    
-//     Campground.create(newCampground, function(err, newlyCampground){
-       
-//       if(err){
-//           console(err);
-//       } else{
-//             res.redirect("/campgrounds");
 
-//       }
-        
-//     });
-    
-// });
-
-//****************
 //CREATE - add new campground to DB
 router.post("/", middleware.isLoggedIn, function(req, res){
   // get data from form and add to campgrounds array
@@ -80,7 +50,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
     });
   });
 });
-//****************
+
 
 //New campground. Display form 
 router.get("/new", middleware.isLoggedIn, function(req, res){
