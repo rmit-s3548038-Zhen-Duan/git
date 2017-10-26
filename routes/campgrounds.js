@@ -27,13 +27,14 @@ router.post("/", middleware.isLoggedIn, function(req, res){
     //注意body的用法，得到data from post
     var name =  req.body.name;
     var image = req.body.image;
+    var cost = req.body.cost;
     var description = req.body.description;
     var author = {
         id: req.user._id,
         username: req.user.username
     }
     
-    var newCampground = {name: name, image: image, description: description, author: author};
+    var newCampground = {name: name, image: image, cost: cost, description: description, author: author};
     //campgrounds.push(campground);
     
     Campground.create(newCampground, function(err, newlyCampground){
